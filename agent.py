@@ -19,10 +19,10 @@ class Agent():
 
 
 	def build_tupleNet(self):
-		self.net.append(np.ndarray(shape=(24, 24, 24, 24, 24, 24), dtype=np.float64))
-		self.net.append(np.ndarray(shape=(24, 24, 24, 24, 24, 24), dtype=np.float64))
-		self.net.append(np.ndarray(shape=(24, 24, 24, 24), dtype=np.float64))
-		self.net.append(np.ndarray(shape=(24, 24, 24, 24), dtype=np.float64))
+		self.net.append(np.zeros(shape=(20, 20, 20, 20, 20, 20), dtype=np.float32))
+		self.net.append(np.zeros(shape=(20, 20, 20, 20, 20, 20), dtype=np.float32))
+		self.net.append(np.zeros(shape=(20, 20, 20, 20), dtype=np.float32))
+		self.net.append(np.zeros(shape=(20, 20, 20, 20), dtype=np.float32))
 		
 	def load_tupleNet(self, filename):
 		for i in range(4):
@@ -58,7 +58,6 @@ class Agent():
 		self.episode = []
 		
 	def Episode_end(self):
-		#TODO TD-Learning
 		last = True
 		while len(self.episode) > 0:
 			a = self.episode[-1]['after']
@@ -96,28 +95,20 @@ class Agent():
 		
 		if maxOP != -1:
 			r = prev.move(maxOP)
+			tmp.copyBoard(prev)
 			state = {
-			'before': prev,
-			'after': prev,
+			'before': tmp,
+			'after': tmp,
 			'reward': r,
 			'action': maxOP
 			}
 			if len(self.episode) > 0:
-				self.episode[-1]['after'] = prev
+				self.episode[-1]['after'] = tmp
 			self.episode.append(state)
 			return maxOP, r
 		else:
 			return -1, -1
 		
-		"""
-		state = {
-		'before': Board() 
-		'after': Board()
-		'reward': int
-		'action': int
-		}
-		"""
-
 
 
 if __name__ == "__main__":

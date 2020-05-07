@@ -4,8 +4,8 @@ from analyze import Analyzer
 #from argparse import ArgumentParser
 
 TRAIN = True
-EPISODE = 50000
-MILESTONE = 1000
+EPISODE = 3000
+MILESTONE = 500
 
 
 if __name__ == "__main__":
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
 	else:
 		totalR = 0
-		for i in range(1000):	
+		for i in range(1):	
 			Game.initialize()
 			while True:
 				act, r = AI.step(Game)
@@ -49,5 +49,5 @@ if __name__ == "__main__":
 				Game.GenRandTile(r)
 				if Game.end_game():
 					break
-		#Game.printBoard()
+		Game.printBoard()
 		print("Score: {}".format(totalR))
