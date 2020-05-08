@@ -1,6 +1,6 @@
-SIZE = 400
+SIZE = 480
 GRID_LEN = 4
-GRID_PADDING = 10
+GRID_PADDING = 7
 
 BACKGROUND_COLOR_GAME = "#92877d"
 BACKGROUND_COLOR_CELL_EMPTY = "#9e948a"
@@ -21,7 +21,7 @@ CELL_COLOR_DICT = {2: "#776e65", 4: "#776e65", 8: "#f9f6f2", 16: "#f9f6f2",
                    4096: "#776e65", 8192: "#f9f6f2", 16384: "#776e65",
                    32768: "#776e65", 65536: "#f9f6f2", }
 
-FONT = ("Verdana", 40, "bold")
+FONT = ("Verdana", 32, "bold")
 
 KEY_UP_ALT = "\'\\uf700\'"
 KEY_DOWN_ALT = "\'\\uf701\'"
@@ -32,9 +32,11 @@ KEY_UP = "'w'"
 KEY_DOWN = "'s'"
 KEY_LEFT = "'a'"
 KEY_RIGHT = "'d'"
-KEY_BACK = "'b'"
+#KEY_BACK = "'b'"
 
-KEY_J = "'j'"
-KEY_K = "'k'"
-KEY_L = "'l'"
-KEY_H = "'h'"
+KEY_AUTOPLAY = "'z'"
+KEY_HINT = "'h'"
+#KEY_J = "'j'"
+#KEY_K = "'k'"
+#KEY_L = "'l'"
+#KEY_H = "'h'"

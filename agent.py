@@ -15,7 +15,9 @@ class Agent():
 			print("Loading...")
 			self.load_tupleNet("tupleNet/tuple")
 		else:
+			print("Building tuple Network...")
 			self.build_tupleNet()
+			print("Completed")
 
 
 	def build_tupleNet(self):

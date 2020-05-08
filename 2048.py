@@ -1,53 +1,42 @@
-from agent import Agent
-from board import Board
-from analyze import Analyzer
-#from argparse import ArgumentParser
+from gamegrid import GameGrid
+from argparse import ArgumentParser
+from trainer import Trainer
 
-TRAIN = True
-EPISODE = 3000
-MILESTONE = 500
+
+parser = ArgumentParser()
+parser.add_argument("--play", help = "Play the game or not (y/n), default: y", dest="play", default="y")
+parser.add_argument("--train", help = "Train mode (on/off), default: off", dest="train", default="off")
+parser.add_argument("-e", help = "Total episodes to train (recommend less than 10000 per time), default: 1000", dest="episode", type=int, default=1000)
+parser.add_argument("-m", help = "Set milestone to save tuple nets and show the training statistics, default: 500", dest="milestone", type=int, default=500)
+
+args = parser.parse_args()
+
 
 
 if __name__ == "__main__":
-	Game = Board()
-	AI = Agent()
-	analysis = Analyzer()
-	if TRAIN == True:
-		totalR = 0
-		for e in range(EPISODE):
-			Game.initialize()
-			AI.Episode_begin()
-			while True:
-				act, r = AI.step(Game)
-				if r != -1:
-					totalR += r
-				if Game.end_game():
-					break
-				Game.GenRandTile(r)
-				if Game.end_game():
-					break
-			AI.Episode_end()
-			analysis.eval(Game)
-			if e % MILESTONE == 0:
-				print("#Episode: {episode}, score: {score}".format(episode = e, score = totalR))	
-				totalR = 0
-				analysis.printAnalysis(MILESTONE)
-				analysis.reset()
-				AI.save_tupleNet()
-		AI.save_tupleNet()
+	if args.play == "n":
+		PLAY = False
+	else:
+		PLAY = True
+	if args.train == 'on':
+		TRAIN = True
+	else:
+		TRAIN = False
+	EPISODE = args.episode
+	MILESTONE = args.milestone
+	
+
+	if PLAY:
+		print("\n\n")
+		print("#########		Use Arrow Keys or w/a/s/d to move tiles UP/LEFT/DOWN/RIGHT")
+		print("#########		Wanna get a hint?") 
+		print("#########		Press 'h' to let the AI to help moving the critical step for you!")
+		print("#########		Can't breakthrough your personal record?") 
+		print("#########		Press 'z' to see how the AI crack this game! (AI auto play mode)")
+		print("")
+		print("auto play mode can be toggled by pressing 'z' again\n\n")
+		Game2048 = GameGrid()
 
 	else:
-		totalR = 0
-		for i in range(1):	
-			Game.initialize()
-			while True:
-				act, r = AI.step(Game)
-				if r != -1:
-					totalR += r
-				if Game.end_game():
-					break
-				Game.GenRandTile(r)
-				if Game.end_game():
-					break
-		Game.printBoard()
-		print("Score: {}".format(totalR))
+		trainer = Trainer(TRAIN, EPISODE, MILESTONE)
+

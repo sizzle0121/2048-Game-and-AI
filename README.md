@@ -3,12 +3,15 @@
 	
 ### Live Demo		
 	#TODO	
-	#build up web server to run the game on local host		
+	#GUI complete
+	#Human-AI cooperation
+
 
 ### How to Run?		
 >To Train your AI	
+	#add argumnet parser
 >Let the AI Play the Game		
-
+	
 
 ### N-Tuple Network		
 	#TODO		
