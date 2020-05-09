@@ -120,16 +120,11 @@ if __name__ == "__main__":
 		B = Board()
 		B.initialize()
 		while True:
-			#print("\nAI's turn")
 			act, r = AI.step(B)
 			if B.end_game():
-				#B.printBoard()
 				break
-			#B.printBoard()
-			#print("\nEnv's turn")
 			B.GenRandTile(r)
 			if B.end_game():
-				#B.printBoard()
 				break
 			#B.printBoard()
 		if e % 100 == 0:

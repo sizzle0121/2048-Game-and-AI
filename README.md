@@ -10,16 +10,16 @@ Launch and play the game (human player)
 
 ### How to Run?		
 * To play the game		
-`python3 2048.py`		
+>	`python3 2048.py`		
 	
 * To see arguments		
-`python3 2048.py -h`	
+>	`python3 2048.py -h`	
 	
 * To train your AI (the tuple network will be saved to the directory tupleNet/)		
-`python3 2048.py --play=n --train=on -e=5000 -m=500`		
+>	`python3 2048.py --play=n --train=on -e=5000 -m=500`		
 	
 * To test your AI for one game round		
-`python3 2048.py --play=n --train=off`		
+>	`python3 2048.py --play=n --train=off`		
 	
 	
 	
