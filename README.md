@@ -3,7 +3,7 @@
 	
 ### Live Demo		
 Gameplay by AI		
-<center>![demo](https://github.com/sizzle0121/2048-Game-and-AI/blob/master/img/demo.gif)</center>		
+![demo](https://github.com/sizzle0121/2048-Game-and-AI/blob/master/img/demo.gif)		
 	
 Launch and play the game (human player)		
 ![demo1](https://github.com/sizzle0121/2048-Game-and-AI/blob/master/img/demo1.gif)			
