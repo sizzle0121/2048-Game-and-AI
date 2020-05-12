@@ -2,8 +2,11 @@
 ### Train an AI to crack the game!		
 	
 ### Live Demo		
-Launch and play the game (human player)			
-![demo](https://github.com/sizzle0121/2048-Game-and-AI/blob/master/img/demo1.gif)			
+Gameplay by AI
+![demo](https://github.com/sizzle0121/2048-Game-and-AI/blob/master/img/demo.gif)		
+	
+Launch and play the game (human player)		
+![demo1](https://github.com/sizzle0121/2048-Game-and-AI/blob/master/img/demo1.gif)			
 		
 
 
@@ -41,7 +44,7 @@ Here, I implement 6644-tuple network.
 		
 	
 ### Temporal Difference Learning			
-I implement TD(0) after state earning.			
+I implement TD(0) after state learning.			
 The "after state" is like the Q(s, a) value.		
 ![TDL](https://github.com/sizzle0121/2048-Game-and-AI/blob/master/img/TDL.png)			
 	
@@ -49,7 +52,7 @@ The "after state" is like the Q(s, a) value.
 
 	
 ### Future Development		
->	
->Add expectimax search to enhance the performance.		
->Implement BitBoard to speed up training.		
->Implementing DQN to extract features and train may be interesting as well.		
+>		
+>* Add expectimax search to enhance the performance.		
+>* Implement BitBoard to speed up training.		
+>* Implementing DQN to extract features and train may be interesting as well.		
